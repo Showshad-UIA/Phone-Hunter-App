@@ -25,28 +25,33 @@
 	<body>
 		<header class="text-center mt-5">
 			<h1>
-				Pick your<span class="text-primary"> Best Mobile</span> from the list..
+				Pick Your<span class="text-primary"> Top Brand</span> From The List..
 			</h1>
 		</header>
 		<main>
-			<div class="container text-center mt-5 w-100 m-auto card" style="width: 18rem;">
+			<div class="container text-center mt-5 w-100 bg-success p-2 text-dark bg-opacity-25 m-auto card" style="width: 18rem;">
                 
                     <div class="card-body" >
                         <div class="row w-100 ">
                             <div class="col-md-6 m-auto">
-                                <h3>Search Here</h3>
+                                <marquee behavior="" direction="left">
+                                    <h3>Add Your Cart Here</h3>
+                                </marquee>
+                               
                                 <div class="input-group mb-3">
-                                    <input type="text" id="search-box" class="form-control" placeholder="Please type your phone name" aria-label="Search" aria-describedby="basic-addon2">
+                                    <input type="text" id="search-box" class="form-control" placeholder="Please type your brand name" aria-label="Search" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
-                                      <span class="input-group-text" onclick='mobileFind()' id="search-btn">Search
+                                      <span class="input-group-text text-primary" onclick='mobileFind()' id="search-btn">Search
                                     </div>
                                   </div>
+                                  <div id= 'spinner' class="lds-dual-ring"></div>
+                                  <h2 id="error" class="text-danger"></h2>
                                   <div class="phones-container row" id="phones-container">
                                     
                                   </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                <h3>Mobile Details</h3>
+                                <h3>See Details</h3>
                                 <div class="phone-Container" id="phone-Container">
                                     
                                 </div>

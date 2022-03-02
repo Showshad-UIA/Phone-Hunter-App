@@ -8,7 +8,7 @@ const mobileFind = () => {
 	input.value = "";
 
 	// error handling
-
+	const error = document.getElementById("error");
 	if (searchValue == "") {
 		error.innerText = "please input a brand name!!";
 		input.value = "";
@@ -34,10 +34,10 @@ const phoneList = (phones) => {
 		const div = document.createElement("div");
 		div.className = "col-lg-4 mb-3";
 		div.innerHTML = `  <div class="card border">
-        <div class="phone-details">
+        <div class="phone-details g-4">
             <img  class=" mt-3 w-50 mb-2" src="${phone.image}" alt="">
             <h5 class=" mt-3">Brand: ${phone.brand}</h5>
-            <h5 class=" mt-3">Phone: ${phone.phone_name}</h5>
+            <h5 class=" mt-3">Model: ${phone.phone_name}</h5>
             <button class="btn btn-success mb-4" onclick="phoneInfo('${phone.slug}')">See Details</button>
         </div>
     </div>`;
@@ -56,7 +56,11 @@ const phoneInfo = (phoneId) => {
 
 // display the phone details
 const phoneValueLoaded = (info) => {
-	document.getElementById("phone-Container").innerHTML = `
+	const error2 = document.getElementById("error2");
+	if (info == null) {
+		error2.innerText = "Data is not avaiable";
+	} else {
+		document.getElementById("phone-Container").innerHTML = `
 			<div >
 			<img class="w-50" src="${info.image}" alt="">
 			<p class="mt-5"><span class="text-primary"> Name:</span> ${info.name}</p>
@@ -69,4 +73,5 @@ const phoneValueLoaded = (info) => {
 			
 			</div>
     `;
+	}
 };

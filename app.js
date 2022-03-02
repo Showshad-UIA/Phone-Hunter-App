@@ -52,11 +52,12 @@ const phoneInfo = (phoneId) => {
 		.then((data) => phoneValueLoaded(data.data));
 };
 
+// display the phone details
 const phoneValueLoaded = (info) => {
 	document.getElementById("phone-Container").innerHTML = `
-    <div>
-    <img class="w-25 mb-3" src="${info.image}" alt="">
-    <h3><span class="text-primary"> Name:</span> ${info.name}</h3>
+    <div >
+    <img class="w-50" src="${info.image}" alt="">
+    <h3 class="mt-5"><span class="text-primary"> Name:</span> ${info.name}</h3>
     <h5><span class="text-primary"> Release-Date:</span> ${info.releaseDate}</h5>
     <h5><span class="text-primary"> ChipSet:</span> ${info.mainFeatures.chipSet}</h5>
     <h5><span class="text-primary">Memory:</span> ${info.mainFeatures.memory}</h5>
@@ -66,5 +67,4 @@ const phoneValueLoaded = (info) => {
     
     </div>
     `;
-	console.log(info);
 };
